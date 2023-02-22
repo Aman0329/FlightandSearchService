@@ -1,0 +1,9 @@
+1st command--npx sequelize init; (for initializing config.json)
+
+2nd command--npx sequelize db:create;(for creating database)
+
+3rd command-- npx sequelize model:generate --name City --attributes name:String;(for creating table)
+
+4th command--npx sequelize db:migrate;(it will run the migration file so as the changes should reflect in mysql)
+
+5th command--npx sequelize db:migrate:undo;(it will undo he changes)
