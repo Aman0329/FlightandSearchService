@@ -11,13 +11,14 @@ const {City}=require('../models/index'); //require whole database which is index
         }
     } //function for creating city in city table
 
-    async deleteCity({cityId}){
+    async deleteCity(cityId){
         try{
             await City.destroy({
                 where :{
                     id:cityId
                 }
             });
+            return true;
         }
         catch(error){
             throw error;
@@ -25,11 +26,12 @@ const {City}=require('../models/index'); //require whole database which is index
     }
     async updateCity(cityId,data){
         try {
-            await City.update(data,{
+            const response=await City.update(data,{
                 where:{
                     id:cityId
                 }
             });
+            return response;
         } catch (error) {
             throw(error);
         }
